@@ -7,8 +7,9 @@
 - Логика `Zoom` из `src/render/zoom.cpp` перенесена в `libresprite_py.zoom`.
 - Базовая логика ordered dithering из `src/render/ordered_dither.h` перенесена в `libresprite_py.ordered_dither` (`BayerMatrix`, `Palette`, `dither_rgb_pixel_to_index`).
 - Портированы текстовые утилиты из `src/base`: `replace_string`, `split_string`, `trim_string`.
-- Добавлен CLI `libresprite-py` для проверки поведения масштаба.
-- Добавлены unit-тесты на поведение шкалы, матриц dithering, текстовых утилит и граничные случаи.
+- Добавлена минимальная модель проекта спрайта (`libresprite_py.sprite`) с JSON-форматом и экспортом в PPM.
+- Добавлен CLI `libresprite-py` с командами `zoom`, `new`, `paint`, `export-ppm`.
+- Добавлены unit-тесты на поведение шкалы, dithering, текстовых утилит, модели спрайта и CLI-flow.
 
 ## Запуск
 
@@ -18,7 +19,14 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -e .
 pytest
-libresprite-py --scale 0.75 --direction in
+```
+
+## Минимально рабочий flow
+
+```bash
+libresprite-py new --width 16 --height 16 --output demo.json
+libresprite-py paint --project demo.json --x 2 --y 3 --color 255,0,0,255
+libresprite-py export-ppm --project demo.json --output demo.ppm
 ```
 
 ## План дальнейшего переписывания
