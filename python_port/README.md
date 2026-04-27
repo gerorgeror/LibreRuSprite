@@ -6,8 +6,9 @@
 
 - Логика `Zoom` из `src/render/zoom.cpp` перенесена в `libresprite_py.zoom`.
 - Базовая логика ordered dithering из `src/render/ordered_dither.h` перенесена в `libresprite_py.ordered_dither` (`BayerMatrix`, `Palette`, `dither_rgb_pixel_to_index`).
+- Портированы текстовые утилиты из `src/base`: `replace_string`, `split_string`, `trim_string`.
 - Добавлен CLI `libresprite-py` для проверки поведения масштаба.
-- Добавлены unit-тесты на поведение шкалы, матриц dithering и граничные случаи.
+- Добавлены unit-тесты на поведение шкалы, матриц dithering, текстовых утилит и граничные случаи.
 
 ## Запуск
 
