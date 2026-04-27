@@ -26,6 +26,10 @@ As LibreSprite has a newly budding community, we need help building the infrastr
 ## Compiling
 Don't worry, it isn't as hard as you might think! Just follow the instructions [here](INSTALL.md).
 
+## Python rewrite bootstrap
+Initial Python port work lives in [`python_port/`](python_port/README.md).
+
+
 ## Theming
 Don't like the default look of LibreSprite? Don't panic, you can download from the LibreSprite [resources](https://libresprite.github.io/#!/resources) repo. 
 
